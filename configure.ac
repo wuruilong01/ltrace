@@ -42,6 +42,7 @@ AC_SUBST(HOST_OS)
 case "${host_cpu}" in
     arm*|sa110)		HOST_CPU="arm" ;;
     cris*)		HOST_CPU="cris" ;;
+    loongarch*)		HOST_CPU="loongarch" ;;
     mips*)		HOST_CPU="mips" ;;
     powerpc|powerpc64|powerpc64le)	HOST_CPU="ppc" ;;
     sun4u|sparc64)	HOST_CPU="sparc" ;;
@@ -217,6 +218,7 @@ if test x"$enable_libunwind" = xyes; then
       powerpc)		  UNWIND_ARCH="ppc32" ;;
       powerpc64|powerpc64le)	UNWIND_ARCH="ppc64" ;;
       mips*)		  UNWIND_ARCH="mips" ;;
+      loongarch*)	  UNWIND_ARCH="loongarch" ;;
       *)		  UNWIND_ARCH="${host_cpu}" ;;
   esac
 
@@ -407,6 +409,7 @@ AC_CONFIG_FILES([
 	sysdeps/linux-gnu/arm/Makefile
 	sysdeps/linux-gnu/cris/Makefile
 	sysdeps/linux-gnu/ia64/Makefile
+	sysdeps/linux-gnu/loongarch/Makefile
 	sysdeps/linux-gnu/m68k/Makefile
 	sysdeps/linux-gnu/metag/Makefile
 	sysdeps/linux-gnu/mips/Makefile
